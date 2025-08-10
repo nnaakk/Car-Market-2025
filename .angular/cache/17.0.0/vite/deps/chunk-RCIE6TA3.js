@@ -1,4 +1,34 @@
 import {
+  FirebaseApp,
+  FirebaseApps,
+  VERSION,
+  ɵAngularFireSchedulers,
+  ɵAppCheckInstances,
+  ɵgetAllInstancesOf,
+  ɵgetDefaultInstanceOf,
+  ɵzoneWrap
+} from "./chunk-D7GZHLRY.js";
+import {
+  InjectionToken,
+  Injector,
+  NgModule,
+  NgZone,
+  Optional,
+  makeEnvironmentProviders,
+  setClassMetadata,
+  ɵɵdefineInjector,
+  ɵɵdefineNgModule
+} from "./chunk-42EO6GXC.js";
+import {
+  Observable,
+  concatMap,
+  distinct,
+  from,
+  of,
+  switchMap,
+  timer
+} from "./chunk-YHCIM74Y.js";
+import {
   applyActionCode,
   beforeAuthStateChanged,
   checkActionCode,
@@ -53,40 +83,10 @@ import {
   validatePassword,
   verifyBeforeUpdateEmail,
   verifyPasswordResetCode
-} from "./chunk-EW4H3LN3.js";
-import {
-  FirebaseApp,
-  FirebaseApps,
-  VERSION,
-  ɵAngularFireSchedulers,
-  ɵAppCheckInstances,
-  ɵgetAllInstancesOf,
-  ɵgetDefaultInstanceOf,
-  ɵzoneWrap
-} from "./chunk-HFB5K4ZW.js";
+} from "./chunk-3U76KR4V.js";
 import {
   registerVersion
 } from "./chunk-5CWVJWM4.js";
-import {
-  InjectionToken,
-  Injector,
-  NgModule,
-  NgZone,
-  Optional,
-  makeEnvironmentProviders,
-  setClassMetadata,
-  ɵɵdefineInjector,
-  ɵɵdefineNgModule
-} from "./chunk-JTKZENH5.js";
-import {
-  Observable,
-  concatMap,
-  distinct,
-  from,
-  of,
-  switchMap,
-  timer
-} from "./chunk-CQXG3EQT.js";
 
 // node_modules/rxfire/auth/index.esm.js
 function authState(auth) {
@@ -313,4 +313,4 @@ rxfire/auth/index.esm.js:
    * limitations under the License.
    *)
 */
-//# sourceMappingURL=chunk-YAT7UT4R.js.map
+//# sourceMappingURL=chunk-RCIE6TA3.js.map

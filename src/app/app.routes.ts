@@ -7,6 +7,9 @@ import { HomeComponent } from './components/home/home.component';
 import { SingleCarComponent } from './components/single-car/single-car.component';
 import { UpdateComponent } from './components/update/update-car.component';
 import { SliderComponent } from './components/slider/slider.component';
+import { authGuard } from './auth/auth.guard';
+
+
 export const routes: Routes = [
   {
     path: 'register',
@@ -18,19 +21,23 @@ export const routes: Routes = [
   },
   {
     path: 'create',
-    component: CreateComponent
+    component: CreateComponent,
+canActivate:[authGuard]
   },
   {
     path: 'list',
-    component: CarsListComponent
+    component: CarsListComponent,
+    canActivate:[authGuard]
   },
   {
     path: `list/:carId`,
-    component: SingleCarComponent
+    component: SingleCarComponent,
+    canActivate:[authGuard]
   },
   {
     path: `update/:carId`,
-    component: UpdateComponent
+    component: UpdateComponent,
+    canActivate:[authGuard]
   },
   {
     path: '',
