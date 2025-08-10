@@ -1,0 +1,18 @@
+.car-container{
+display: flex;
+flex-wrap: wrap;
+border: 1px solid black;
+padding: 15px;
+margin-bottom: 10px;
+
+align-items: center;
+justify-content: space-between;
+width: 40vw;
+}
+
+.cars-container{
+    padding-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}

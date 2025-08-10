@@ -1,0 +1,79 @@
+<h2>Създай автомобил</h2>
+
+<form [formGroup]="carForm" (ngSubmit)="createCar()">
+  <div class="container">
+<div class="info">
+  <!-- Марка -->
+  <label for="brand">Марка</label>
+  <input id="brand" type="text" formControlName="brand">
+  @if (carForm.get('brand')?.invalid && carForm.get('brand')?.touched) {
+    <p style="color: red;">Марката е задължителна.</p>
+  }
+
+  <!-- Тип -->
+  <label for="typ">Тип</label>
+  <select id="typ" formControlName="typ">
+    <option value="">Избери тип</option>
+    <option value="Sedan">Sedan</option>
+    <option value="Coupe">Coupe</option>
+    <option value="SUV">SUV</option>
+    <option value="Hatchback">Hatchback</option>
+  </select>
+  @if (carForm.get('typ')?.invalid && carForm.get('typ')?.touched) {
+    <p style="color: red;">Типът е задължителен.</p>
+  }
+
+  <!-- Мощност -->
+  <label for="power">Мощност (к.с.)</label>
+  <input id="power" type="text" formControlName="power">
+  @if (carForm.get('power')?.invalid && carForm.get('power')?.touched) {
+    <p style="color: red;">Мощността е задължителна.</p>
+  }
+
+  <!-- Година -->
+  <label for="year">Година на производство</label>
+  <input id="year" type="number" formControlName="year">
+  @if (carForm.get('year')?.invalid && carForm.get('year')?.touched) {
+    <p style="color: red;">Годината трябва да е валидна и не по-малка от 1900.</p>
+  }
+  <!-- Цена -->
+<label for="price">Цена</label>
+<input id="price" type="number" formControlName="price" min="0">
+@if (carForm.get('price')?.invalid && carForm.get('price')?.touched) {
+  <p style="color: red;">Цената е задължителна.</p>
+}
+
+<!-- Телефон -->
+<label for="phone">Телефон за контакт</label>
+<input id="phone" type="tel" formControlName="phone" placeholder="089XXXXXXX">
+@if (carForm.get('phone')?.invalid && carForm.get('phone')?.touched) {
+  <p style="color: red;">Валиден телефонен номер е задължителен.</p>
+}
+
+
+  <!-- Описание -->
+  <label for="description">Описание</label>
+  <textarea id="description" formControlName="description"></textarea>
+  @if (carForm.get('description')?.invalid && carForm.get('description')?.touched) {
+    <p style="color: red;">Описанието е задължително.</p>
+  }
+   <button type="submit" [disabled]="carForm.invalid">Създай автомобил</button>
+</div>
+
+
+  <!-- Изображения -->
+  <div class="image" formArrayName="images">
+    <label>Въведи 5 URL-а за изображения:</label>
+    @for (imgCtrl of images.controls; track $index) {
+  <input [formControlName]="$index" type="text" placeholder="Image URL {{ $index + 1 }}">
+  @if (imgCtrl.invalid && imgCtrl.touched) {
+    <p style="color: red;">Image URL {{ $index + 1 }} е задължителен.</p>
+  }
+}
+  
+</div>
+
+</div>
+  <!-- Submit бутон -->
+ 
+</form>

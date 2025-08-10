@@ -1,0 +1,41 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 100px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+}
+.image {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  max-width: 250px;
+}
+
+.image img {
+  display: block;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+
+h2 {
+    text-align: center;
+}
+button {
+    margin: 20px 0px;
+}
+.img-order{
+    display: flex;
+    align-items: center;
+}
+.inp{
+    max-height: 20px;
+}

@@ -1,0 +1,45 @@
+<h2>Car Details</h2>
+<div class="container">
+<div class="info" *ngIf="car">
+  <p><strong>Brand:</strong> {{ car.brand }}</p>
+  <p><strong>Type:</strong> {{ car.typ }}</p>
+  <p><strong>Power:</strong> {{ car.power }}</p>
+  <p><strong>Year:</strong> {{ car.year }}</p>
+  <p><strong>Description:</strong> {{ car.description }}</p>
+  <p><strong>Price:</strong> {{ car.price }} лв</p>
+  <p><strong>Date:</strong> {{ car.date }}</p>
+  <p><strong>Phone:</strong> {{ car.phone }}</p>
+  <p><strong>Owner ID:</strong> {{ car.userId }}</p>
+</div>
+  <!-- Слайдер -->
+  <div class="slider" *ngIf="car && car.images?.length">
+
+    <div class="main-image">
+      <img [src]="selectedImage" alt="Main image" />
+    </div>
+
+    <div class="thumbnails">
+      <img
+        *ngFor="let img of car.images"
+        [src]="img"
+        [class.active]="img === selectedImage"
+        (click)="selectImage(img)"
+        alt="Thumbnail"
+      />
+    </div>
+  </div>
+</div>
+  <!-- Бутони -->
+ <div *ngIf="car && car.userId === userId" class="buttons">
+
+    <button (click)="editCar()">Edit</button>
+    <button (click)="deleteCar()">Delete</button>
+  </div>
+
+
+
+<!-- Ако car не е зареден -->
+<div *ngIf="!car">
+  <p>Loading car details...</p>
+</div>
+

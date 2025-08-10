@@ -1,0 +1,27 @@
+.defer {
+  margin-top: 300px;
+}
+
+.nav-bar {
+  
+  height: 40px;
+  background-color: blue;
+  color: yellow;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 30px;
+}
+
+a, span {
+  text-decoration: none;
+  background-color: white;
+  color: blue;
+  padding: 3px 10px;
+  margin-left: 15px;
+}
+.logoItem a{
+  color: yellow;
+  font-size: 1.5rem;
+  background-color: inherit;
+}

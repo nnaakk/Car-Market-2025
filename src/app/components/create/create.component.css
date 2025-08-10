@@ -1,0 +1,24 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 100px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+}
+.image input {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+h2 {
+    text-align: center;
+}
+button {
+    margin: 20px 0px;
+}

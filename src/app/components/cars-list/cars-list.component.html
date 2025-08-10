@@ -1,0 +1,32 @@
+<div class="cars-container">
+
+
+
+      @for(car of cars; track $index){
+      <div class="car-container">
+            <div class="img-container">
+                  <img [src]="car.images[0]" alt="Car image" width="200">
+            </div>
+            <div class="car-info">
+                  <p> Brand: {{ car.brand }} </p>
+
+                  <p> Type: {{ car.typ }} </p>
+
+                  <p> Price: ${{ car. price}} </p>
+
+                  <p> Phone: {{car.phone}}</p>
+
+                  <p>Views: {{ car.history?.length || 0 }}</p>
+
+                  <button *ngIf="car.id" (click)="showCar(car.id)">Details</button>
+
+            </div>
+
+
+
+            
+
+
+      </div>
+      }
+</div>

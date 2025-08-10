@@ -1,0 +1,34 @@
+
+<div class="images-container">
+<div class="top-image">
+  <img src="{{a}}" alt="q1">
+</div>
+
+  <div class="thumbnail-container">
+  <img *ngFor="let img of images; let i = index"
+       [src]="img"
+       [class.selected]="i === x"
+       (click)="selectImage(i)"
+       alt="thumbnail">
+</div>
+<div class="slider">
+  <button 
+    (click)="onClickHandlerBack()" 
+    [disabled]="isPrevDisabled"
+    class="nav-btn">
+    {{ buttonText1 }}
+  </button>
+
+  <button 
+    (click)="onClickHandler()" 
+    [disabled]="isNextDisabled"
+    class="nav-btn">
+    {{ buttonText }}
+  </button>
+</div>
+
+  
+
+</div>
+
+

@@ -1,0 +1,35 @@
+<nav class="nav-bar">
+
+<div class="logoItem">
+     <a routerLink="/">Car Market</a>
+  </div>
+
+
+
+@if(authService.currentUserSig() == null){
+
+
+
+  
+  <div class="nav-item">
+    <a routerLink="/login">Login</a>
+    <a routerLink="/register">Register</a>
+  </div>
+
+}
+@if(authService.currentUserSig()){
+
+
+ 
+  <div class="nav-item">
+    <a routerLink="/create">Create Car</a>
+    <a routerLink="/list">List</a>
+    <span (click)="logout()">Logout</span>
+  </div>
+
+}
+</nav>
+
+
+
+<router-outlet></router-outlet>
