@@ -4,7 +4,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
-import { CarData } from '../../services/carinterface';
+import { CarData } from '../../interfaces/carinterface';
 import { CarService } from '../../services/car.service';
 
 @Component({

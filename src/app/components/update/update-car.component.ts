@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators, FormArray, ReactiveFormsModule } fr
 import { ActivatedRoute, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { CarService } from '../../services/car.service';
-import { CarData } from '../../services/carinterface';
+import { CarData } from '../../interfaces/carinterface';
 
 @Component({
   selector: 'app-update-car',

@@ -1,7 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import {  getDoc,  } from 'firebase/firestore';
 import { addDoc, collection, Firestore, deleteDoc, doc, onSnapshot,updateDoc } from '@angular/fire/firestore';
-import { CarData } from './carinterface';
+import { CarData } from '../interfaces/carinterface';
 import { from, Observable } from 'rxjs'
 @Injectable({
   providedIn: 'root'

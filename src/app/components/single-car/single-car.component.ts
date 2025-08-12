@@ -5,7 +5,7 @@ import { AuthService } from '../../services/auth.service';
 import { CarService } from '../../services/car.service';
 import { Router } from '@angular/router';
 import { SliderComponent } from '../slider/slider.component';
-import { CarData } from '../../services/carinterface';
+import { CarData } from '../../interfaces/carinterface';
 
 @Component({
   selector: 'app-single-car',

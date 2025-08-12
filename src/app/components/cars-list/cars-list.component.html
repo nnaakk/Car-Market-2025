@@ -1,9 +1,31 @@
 <div class="cars-container">
+<div>
+<h2>Search Cars</h2>
+<form [formGroup]="searchForm" (ngSubmit)="filterCars()">
+  <label>Brand:</label>
+  <input type="text" formControlName="brand" placeholder="e.g. Audi">
 
+  <label>Year From:</label>
+  <input type="number" formControlName="yearFrom">
 
+  <label>Year To:</label>
+  <input type="number" formControlName="yearTo">
 
-      @for(car of cars; track $index){
+  <label>Price From:</label>
+  <input type="number" formControlName="priceFrom">
+
+  <label>Price To:</label>
+  <input type="number" formControlName="priceTo">
+
+  <button type="submit">Filter</button>
+</form>
+<h2> Available Cars</h2>
+</div>
+      @for(car of filteredCars; track car.id){
+            
       <div class="car-container">
+
+            
             <div class="img-container">
                   <img [src]="car.images[0]" alt="Car image" width="200">
             </div>
