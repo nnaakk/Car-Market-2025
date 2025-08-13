@@ -1,3 +1,6 @@
+<div class="home-container">
+
+
 <div class="cars-container">
 
 
@@ -22,6 +25,36 @@
 
                  
             </div>
+      </div>
+      }
+
+     <p>And {{cars.length - 3}} more cars</p>
+</div>
+
+<div class="motos-container">
+
+
+
+      @for(moto of homeMotos; track $index){
+      <div class="moto-container">
+            <div class="img-container">
+                  <img [src]="moto.images[0]" alt="Moto image" width="200">
+            </div>
+            <div class="car-info">
+                  <p> Brand: {{ moto.brand }} </p>
+
+                  <p> Type: {{ moto.typ }} </p>
+
+                  <p> Price: ${{ moto. price}} </p>
+
+                  <p> Phone: {{moto.phone}}</p>
+
+                  <p>Created: {{moto.date}}</p>
+
+                  
+
+                 
+            </div>
 
 
 
@@ -31,6 +64,8 @@
       </div>
       }
 
-     <p>And {{cars.length - 3}} more cars</p>
+     <p>And {{motos.length - 3}} more motos</p>
+</div>
+
 </div>
 

@@ -1,0 +1,83 @@
+<h2>Обнови moto</h2>
+
+<form [formGroup]="motoForm" (ngSubmit)="updateMoto()" *ngIf="motoForm">
+  <div class="container">
+    <div class="info">
+  <!-- Марка -->
+  <label for="brand">Марка</label>
+  <input id="brand" type="text" formControlName="brand">
+  @if (motoForm.get('brand')?.invalid && motoForm.get('brand')?.touched) {
+    <p style="color: red;">Марката е задължителна.</p>
+  }
+
+  <!-- Тип -->
+  <label for="typ">Тип</label>
+  <select id="typ" formControlName="typ">
+    <option value="">Избери тип</option>
+    <option value="Sedan">Чопър</option>
+    <option value="Coupe">Пистов</option>
+    <option value="SUV">Туристически</option>
+    <option value="Hatchback">Ендуро</option>
+  </select>
+  @if (motoForm.get('typ')?.invalid && motoForm.get('typ')?.touched) {
+    <p style="color: red;">Типът е задължителен.</p>
+  }
+
+  <!-- Обем -->
+  <label for="volumeе">Мощност</label>
+  <input id="volume" type="text" formControlName="volume">
+  @if (motoForm.get('volume')?.invalid && motoForm.get('volume')?.touched) {
+    <p style="color: red;">Обема е задължителен.</p>
+  }
+
+  <!-- Година -->
+  <label for="year">Година</label>
+  <input id="year" type="number" formControlName="year">
+  @if (motoForm.get('year')?.invalid && motoForm.get('year')?.touched) {
+    <p style="color: red;">Годината трябва да е валидна.</p>
+  }
+
+  <!-- Описание -->
+  <label for="description">Описание</label>
+  <textarea id="description" formControlName="description"></textarea>
+  @if (motoForm.get('description')?.invalid && motoForm.get('description')?.touched) {
+    <p style="color: red;">Описанието е задължително.</p>
+  }
+
+  <!-- Цена -->
+  <label for="price">Цена</label>
+  <input id="price" type="number" formControlName="price">
+
+  <!-- Дата -->
+  <label for="date">Дата</label>
+  <input id="date" type="date" formControlName="date">
+  
+   <!-- Изпрати -->
+  <button type="submit" [disabled]="motoForm.invalid">Обнови мото</button>
+  <!-- Изображения -->
+
+  </div>
+  
+  <div class="image" formArrayName="images">
+    <label>Редактирай изображения</label>
+
+    @for (imgCtrl of images.controls; track $index) {
+      <div class="img-order">
+      <input class="inp"  [formControlName]="$index" type="text" placeholder="Image URL {{ $index + 1 }}">
+      @if (imgCtrl.value) {
+        <img [src]="imgCtrl.value" width="120">
+      }
+     
+      @if (imgCtrl.invalid && imgCtrl.touched) {
+        <p style="color: red;">Image URL {{ $index + 1 }} е задължителен.</p>
+      
+    }
+    </div>
+  }
+   
+  </div>
+
+ 
+  </div>
+</form>
+

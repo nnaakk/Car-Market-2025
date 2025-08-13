@@ -47,6 +47,6 @@ constructor( private carService: CarService) {}
   logout(): void {
     
     this.authService.logout() 
-   this.router.navigateByUrl('/home')
+   this.router.navigateByUrl('/')
   }
 }

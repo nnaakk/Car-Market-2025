@@ -1,0 +1,78 @@
+<h2>Create Moto</h2>
+
+<form [formGroup]="motoForm" (ngSubmit)="createMoto()">
+  <div class="container">
+    <div class="info">
+      <!-- Brand -->
+      <label for="brand">Brand</label>
+      <input id="brand" type="text" formControlName="brand">
+      @if (motoForm.get('brand')?.invalid && motoForm.get('brand')?.touched) {
+      <p style="color: red;">Brand is required.</p>
+      }
+
+      <!-- Type -->
+      <label for="typ">Type</label>
+      <select id="typ" formControlName="typ">
+        <option value="">Select type</option>
+        <option value="Sedan">Чопър</option>
+        <option value="Coupe">Пистов</option>
+        <option value="SUV">Туристчески</option>
+        <option value="Hatchback">Ендуро</option>
+      </select>
+      @if (motoForm.get('typ')?.invalid && motoForm.get('typ')?.touched) {
+      <p style="color: red;">Type is required.</p>
+      }
+
+      <!-- Volume -->
+      <label for="volume">Power (hp)</label>
+      <input id="volume" type="text" formControlName="volume">
+      @if (motoForm.get('volume')?.invalid && motoForm.get('volume')?.touched) {
+      <p style="color: red;">Volume is required.</p>
+      }
+
+      <!-- Year -->
+      <label for="year">Year of Manufacture</label>
+      <input id="year" type="number" formControlName="year">
+      @if (motoForm.get('year')?.invalid && motoForm.get('year')?.touched) {
+      <p style="color: red;">Year must be valid and not earlier than 1900.</p>
+      }
+
+      <!-- Price -->
+      <label for="price">Price</label>
+      <input id="price" type="number" formControlName="price" min="0">
+      @if (motoForm.get('price')?.invalid && motoForm.get('price')?.touched) {
+      <p style="color: red;">Price is required.</p>
+      }
+
+      <!-- Phone -->
+      <label for="phone">Contact Phone</label>
+      <input id="phone" type="tel" formControlName="phone" placeholder="089XXXXXXX">
+      @if (motoForm.get('phone')?.invalid && motoForm.get('phone')?.touched) {
+      <p style="color: red;">A valid phone number is required.</p>
+      }
+
+      <!-- Description -->
+      <label for="description">Description</label>
+      <textarea id="description" formControlName="description"></textarea>
+      @if (motoForm.get('description')?.invalid && motoForm.get('description')?.touched) {
+      <p style="color: red;">Description is required.</p>
+      }
+
+      <button type="submit" [disabled]="motoForm.invalid">Create Car</button>
+    </div>
+
+    <!-- Images -->
+    <div class="image" formArrayName="images">
+      <label>Enter 5 image URLs</label>
+      @for (imgCtrl of images.controls; track $index) {
+      <input [formControlName]="$index" type="text" placeholder="Image URL {{ $index + 1 }}">
+      @if (imgCtrl.invalid && imgCtrl.touched) {
+      <p style="color: red;">Image URL {{ $index + 1 }} is required.</p>
+      }
+      }
+
+    </div>
+
+  </div>
+
+</form>

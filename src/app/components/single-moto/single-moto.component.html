@@ -1,0 +1,51 @@
+<h2>Moto Details</h2>
+<div class="container">
+
+  @if (moto; as c) {
+    <div class="info">
+      <p><strong>Brand:</strong> {{ c.brand }}</p>
+      <p><strong>Type:</strong> {{ c.typ }}</p>
+      <p><strong>Volume:</strong> {{ c.volume }}</p>
+      <p><strong>Year:</strong> {{ c.year }}</p>
+      <p><strong>Price:</strong> {{ c.price }} лв</p>
+      <p><strong>Date:</strong> {{ c.date }}</p>
+      <p><strong>Phone:</strong> {{ c.phone }}</p>
+      <p><strong>Description:</strong> {{ c.description }}</p>
+   <div>
+       @if (c.userId === userId) {
+      <div class="buttons">
+        <button (click)="editMoto()">Edit</button>
+        <button (click)="deleteMoto()">Delete</button>
+      </div>
+    }
+    </div>
+    </div>
+
+  @if (c.images && c.images.length > 0) {
+
+      <div class="slider">
+        <div class="main-image">
+          <img [src]="selectedImage" alt="Main image" />
+        </div>
+
+        <div class="thumbnails">
+          @for (img of c.images; track img) {
+            <img
+              [src]="img"
+              [class.active]="img === selectedImage"
+              (click)="selectImage(img)"
+              alt="Thumbnail"
+            />
+          }
+        </div>
+      </div>
+    }
+
+   
+  }
+
+  @if (!moto) {
+    <p>Loading moto details...</p>
+  }
+</div>
+

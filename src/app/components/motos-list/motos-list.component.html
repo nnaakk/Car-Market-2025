@@ -1,0 +1,54 @@
+<div class="motos-container">
+<div>
+<h2>Search Motos</h2>
+<form [formGroup]="searchForm" (ngSubmit)="filterMotos()">
+  <label>Brand:</label>
+  <input type="text" formControlName="brand" placeholder="e.g. BMW">
+
+  <label>Year From:</label>
+  <input type="number" formControlName="yearFrom">
+
+  <label>Year To:</label>
+  <input type="number" formControlName="yearTo">
+
+  <label>Price From:</label>
+  <input type="number" formControlName="priceFrom">
+
+  <label>Price To:</label>
+  <input type="number" formControlName="priceTo">
+
+  <button type="submit">Filter</button>
+</form>
+<h2> Available Motos</h2>
+</div>
+      @for(moto of filteredMotos; track moto.id){
+            
+      <div class="moto-container">
+
+            
+            <div class="img-container">
+                  <img [src]="moto.images[0]" alt="Moto image" width="200">
+            </div>
+            <div class="moto-info">
+                  <p> Brand: {{ moto.brand }} </p>
+
+                  <p> Type: {{ moto.typ }} </p>
+
+                  <p> Price: ${{ moto. price}} </p>
+
+                  <p> Phone: {{moto.phone}}</p>
+
+                  <p>Views: {{ moto.history?.length || 0 }}</p>
+
+                  <button *ngIf="moto.id" (click)="showMoto(moto.id)">Details</button>
+
+            </div>
+
+
+
+            
+
+
+      </div>
+      }
+</div>

@@ -25,3 +25,12 @@ a, span {
   font-size: 1.5rem;
   background-color: inherit;
 }
+footer{
+  background-color: blue;
+  color: white;
+  position:fixed;
+  bottom: 0px;
+  width:100vw;
+  padding:5px 30px;
+
+}

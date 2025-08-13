@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { AuthService } from '../../services/auth.service';
+import { MotoService } from '../../services/moto.service';
+import { MotoData } from '../../interfaces/motointerface';
 import { Router } from '@angular/router';
 import { CarData } from '../../interfaces/carinterface';
 import { CarService } from '../../services/car.service';
@@ -19,7 +21,9 @@ export class HomeComponent {
   router = inject(Router);
   cars: any[] = []
   homeCars: any[] = []
-  constructor(private carService: CarService) { }
+  motos: any[] = []
+  homeMotos: any[] = []
+  constructor(private carService: CarService,private motoService: MotoService) { }
 
   ngOnInit(): void {
 
@@ -43,7 +47,17 @@ export class HomeComponent {
  this.homeCars = cars
   .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()) 
   .slice(0, 3);
+
+  
 });
+this.motoService.getMotos().subscribe((motos: MotoData[]) => {
+    this.motos = motos;
+  console.log(motos[0]);
+  
+ this.homeMotos = motos
+  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()) 
+  .slice(0, 3);
+})
 
 
 
