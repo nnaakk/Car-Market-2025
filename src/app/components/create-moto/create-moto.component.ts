@@ -75,7 +75,7 @@ export class CreateMotoComponent {
     };
 
     this.motoService.createMoto(motoData,{userId})
-      .then(() => this.router.navigateByUrl('/list'))
+      .then(() => this.router.navigateByUrl('/list-moto'))
       .catch(error => console.error('Error creating:', error));
   }
 }
