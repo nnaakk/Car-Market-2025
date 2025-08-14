@@ -5,7 +5,7 @@
 .nav-bar {
   
   height: 40px;
-  background-color: blue;
+  background-color: hsl(207, 100%, 50%);
   color: yellow;
   display: flex;
   justify-content: space-between;
@@ -16,7 +16,7 @@
 a, span {
   text-decoration: none;
   background-color: white;
-  color: blue;
+  color: hsl(207, 100%, 50%);
   padding: 3px 10px;
   margin-left: 15px;
 }
@@ -26,7 +26,7 @@ a, span {
   background-color: inherit;
 }
 footer{
-  background-color: blue;
+  background-color: hsl(207, 100%, 50%);
   color: white;
   position:fixed;
   bottom: 0px;

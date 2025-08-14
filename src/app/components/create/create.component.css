@@ -20,5 +20,13 @@ h2 {
     text-align: center;
 }
 button {
+    padding: 5px;
     margin: 20px 0px;
+     color: white;
+    background-color: palevioletred;
+}
+
+button:disabled{
+    background-color: gray;
+    opacity: 50%;
 }

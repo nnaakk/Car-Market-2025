@@ -64,3 +64,20 @@ h2{
   align-self: center;
   text-align: center;
 }
+
+button {
+  margin-right: 10px;
+}
+
+.edit-btn{
+  background-color:yellow;
+  padding: 4px;
+  border-radius: 3px;
+}
+
+.delete-btn{
+  background-color: red;
+  padding: 4px;
+  border-radius: 3px;
+}
+

@@ -16,3 +16,10 @@ width: 40vw;
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
+
+button{
+    color: white;
+    background-color: palevioletred;
+    padding: 4px;
+    border-radius: 3px;
+}

@@ -20,5 +20,15 @@ h2 {
     text-align: center;
 }
 button {
-    margin: 20px 0px;
+    padding: 5px;
+    margin: 20px 0px; 
+    color: white;
+    background-color: palevioletred;
+    border-radius: 3px;
+
+}
+
+button:disabled{
+    background-color: gray;
+    opacity: 50%;
 }

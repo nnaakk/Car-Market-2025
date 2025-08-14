@@ -39,3 +39,16 @@ button {
 .inp{
     max-height: 20px;
 }
+button {
+    padding: 5px;
+    margin: 20px 0px; 
+    color: white;
+    background-color: palevioletred;
+    border-radius: 3px;
+
+}
+
+button:disabled{
+    background-color: gray;
+    opacity: 50%;
+}
