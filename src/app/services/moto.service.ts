@@ -41,7 +41,7 @@ export class MotoService {
     return () => unsubscribe();
   });
 }
- getCar(motoId: string): Observable<MotoData> {
+ getMoto(motoId: string): Observable<MotoData> {
   const motoDocRef = doc(this.firestore, `motos/${motoId}`);
 
   return new Observable<MotoData>((observer) => {
@@ -78,7 +78,7 @@ export class MotoService {
   }
 
 
-updateCar(motoId: string, updatedData: Partial<MotoData>) {
+updateMoto(motoId: string, updatedData: Partial<MotoData>) {
   const motoDoc = doc(this.firestore, `motos/${motoId}`);
   return updateDoc(motoDoc, updatedData); // ⬅️ директно Promise
 }

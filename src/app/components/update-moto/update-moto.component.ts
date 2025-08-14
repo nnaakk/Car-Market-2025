@@ -47,7 +47,7 @@ export class UpdateMotoComponent implements OnInit {
     });
 
     // Зареждане на данни от сървиса
-    this.motoService.getCar(this.motoId).subscribe({
+    this.motoService.getMoto(this.motoId).subscribe({
       next: (moto: MotoData) => {
         this.motoForm.patchValue({
           brand: moto.brand,
@@ -91,8 +91,8 @@ export class UpdateMotoComponent implements OnInit {
     };
     // Не трием images, за да не загубим информация — Firebase ще игнорира ако не го очаква
 
-    this.motoService.updateCar(this.motoId, updatedData)
-      .then(() => this.router.navigateByUrl('/list-moto'))
+    this.motoService.updateMoto(this.motoId, updatedData)
+      .then(() => this.router.navigateByUrl('/list-motos'))
       .catch(() => this.errorMessage = 'Грешка при записване на мотопа.');
   }
 }

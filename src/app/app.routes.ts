@@ -8,7 +8,7 @@ import { SingleCarComponent } from './components/single-car/single-car.component
 import { UpdateComponent } from './components/update/update-car.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { CreateMotoComponent } from './components/create-moto/create-moto.component';
-import {MotosListComponent } from './components/motos-list/motos-list.component'
+import { MotosListComponent } from './components/motos-list/motos-list.component'
 import { UpdateMotoComponent } from './components/update-moto/update-moto.component';
 import { SingleMotoComponent } from './components/single-moto/single-moto.component';
 import { authGuard } from './auth/auth.guard';

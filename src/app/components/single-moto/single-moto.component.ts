@@ -37,7 +37,7 @@ export class SingleMotoComponent implements OnInit {
     this.motoId = this.route.snapshot.paramMap.get('motoId');
 
     if (this.motoId) {
-      this.motoService.getCar(this.motoId).subscribe({
+      this.motoService.getMoto(this.motoId).subscribe({
         next: (moto: MotoData) => {
           this.moto = moto;
           this.selectedImage = moto.images?.[0] || '';

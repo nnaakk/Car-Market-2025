@@ -14,17 +14,17 @@
       <label for="typ">Type</label>
       <select id="typ" formControlName="typ">
         <option value="">Select type</option>
-        <option value="Sedan">Чопър</option>
-        <option value="Coupe">Пистов</option>
-        <option value="SUV">Туристчески</option>
-        <option value="Hatchback">Ендуро</option>
+        <option value="Sedan">Chopper</option>
+        <option value="Coupe">Sport</option>
+        <option value="SUV">Touring</option>
+        <option value="Hatchback">Enduro</option>
       </select>
       @if (motoForm.get('typ')?.invalid && motoForm.get('typ')?.touched) {
       <p style="color: red;">Type is required.</p>
       }
 
       <!-- Volume -->
-      <label for="volume">Power (hp)</label>
+      <label for="volume">Volume</label>
       <input id="volume" type="text" formControlName="volume">
       @if (motoForm.get('volume')?.invalid && motoForm.get('volume')?.touched) {
       <p style="color: red;">Volume is required.</p>
