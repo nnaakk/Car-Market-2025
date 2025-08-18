@@ -28,11 +28,10 @@ export class UpdateComponent implements OnInit {
   ngOnInit(): void {
     this.carId = this.route.snapshot.paramMap.get('carId');
     if (!this.carId) {
-      this.errorMessage = 'Невалиден ID на колата.';
+      this.errorMessage = 'Invalid car ID';
       return;
     }
 
-    // Инициализация на формата
     this.carForm = this.fb.group({
       brand: ['', Validators.required],
       typ: ['', Validators.required],
@@ -41,10 +40,10 @@ export class UpdateComponent implements OnInit {
       description: ['', Validators.required],
       price: ['', Validators.required],
       date: [''],
-      images: this.fb.array([]) // Формата използва FormArray
+      images: this.fb.array([]) 
     });
 
-    // Зареждане на данни от сървиса
+    
     this.carService.getCar(this.carId).subscribe({
       next: (car: CarData) => {
         this.carForm.patchValue({
@@ -85,13 +84,13 @@ export class UpdateComponent implements OnInit {
   if (this.carForm.valid && this.carId) {
     const updatedData = {
       ...this.carForm.value,
-      imageUrls: this.carForm.value.images // копираме от формата
+      imageUrls: this.carForm.value.images 
     };
-    // Не трием images, за да не загубим информация — Firebase ще игнорира ако не го очаква
+    
 
     this.carService.updateCar(this.carId, updatedData)
       .then(() => this.router.navigateByUrl('/list'))
-      .catch(() => this.errorMessage = 'Грешка при записване на колата.');
+      .catch(() => this.errorMessage = 'Error while registering the car.');
   }
 }
 

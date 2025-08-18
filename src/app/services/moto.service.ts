@@ -50,13 +50,13 @@ export class MotoService {
         const motoData: MotoData = { id: docSnapshot.id, ...(docSnapshot.data() as MotoData) };
         observer.next(motoData);
       } else {
-        observer.error('Motor not found ');
+        observer.error('Byke not found ');
       }
     }, (error) => {
       observer.error(error);
     });
 
-    // 🔄 Много важно: връща се отписване, за да може Angular да спре слушането
+   
     return () => unsubscribe();
   });
 }
@@ -80,7 +80,7 @@ export class MotoService {
 
 updateMoto(motoId: string, updatedData: Partial<MotoData>) {
   const motoDoc = doc(this.firestore, `motos/${motoId}`);
-  return updateDoc(motoDoc, updatedData); // ⬅️ директно Promise
+  return updateDoc(motoDoc, updatedData);
 }
 
   

@@ -48,14 +48,14 @@ export class CreateMotoComponent {
 
   }
 
-  // Улеснява достъпа до images array в HTML
+  
   get images(): FormArray {
     return this.motoForm.get('images') as FormArray;
   }
 
   getToday(): string {
   const today = new Date();
-  return today.toISOString().split('T')[0]; // YYYY-MM-DD
+  return today.toISOString().split('T')[0]; 
 }
 
   createMoto(): void {
@@ -68,7 +68,7 @@ export class CreateMotoComponent {
       return;
     }
 
-    // Тъй като ползваме imageURL, не е нужен FormData
+   
     const motoData = {
       ...this.motoForm.value,
       userId

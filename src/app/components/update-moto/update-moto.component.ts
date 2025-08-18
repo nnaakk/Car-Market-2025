@@ -30,7 +30,7 @@ export class UpdateMotoComponent implements OnInit {
   ngOnInit(): void {
     this.motoId = this.route.snapshot.paramMap.get('motoId');
     if (!this.motoId) {
-      this.errorMessage = 'Невалиден ID на мотора.';
+      this.errorMessage = 'Invalid bike ID.';
       return;
     }
 
@@ -65,7 +65,7 @@ export class UpdateMotoComponent implements OnInit {
         this.isLoading = false;
       },
       error: () => {
-        this.errorMessage = 'Колата не е намерена.';
+        this.errorMessage = 'The car was not found.';
         this.isLoading = false;
       }
     });
@@ -87,13 +87,12 @@ export class UpdateMotoComponent implements OnInit {
   if (this.motoForm.valid && this.motoId) {
     const updatedData = {
       ...this.motoForm.value,
-      imageUrls: this.motoForm.value.images // копираме от формата
+      imageUrls: this.motoForm.value.images 
     };
-    // Не трием images, за да не загубим информация — Firebase ще игнорира ако не го очаква
-
+    
     this.motoService.updateMoto(this.motoId, updatedData)
       .then(() => this.router.navigateByUrl('/list-motos'))
-      .catch(() => this.errorMessage = 'Грешка при записване на мотопа.');
+      .catch(() => this.errorMessage = 'Error while registering the motorcycle.');
   }
 }
 

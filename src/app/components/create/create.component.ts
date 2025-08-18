@@ -41,7 +41,7 @@ export class CreateComponent {
 
   }
 
-  // Улеснява достъпа до images array в HTML
+  
   get images(): FormArray {
     return this.carForm.get('images') as FormArray;
   }
@@ -61,7 +61,7 @@ export class CreateComponent {
       return;
     }
 
-    // Тъй като ползваме imageURL, не е нужен FormData
+    
     const carData = {
       ...this.carForm.value,
       userId

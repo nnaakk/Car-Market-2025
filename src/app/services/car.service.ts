@@ -50,13 +50,13 @@ export class CarService {
         const carData: CarData = { id: docSnapshot.id, ...(docSnapshot.data() as CarData) };
         observer.next(carData);
       } else {
-        observer.error('Колата не е намерена');
+        observer.error('Car not found');
       }
     }, (error) => {
       observer.error(error);
     });
 
-    // 🔄 Много важно: връща се отписване, за да може Angular да спре слушането
+   
     return () => unsubscribe();
   });
 }
@@ -80,7 +80,7 @@ export class CarService {
 
 updateCar(carId: string, updatedData: Partial<CarData>) {
   const carDoc = doc(this.firestore, `cars/${carId}`);
-  return updateDoc(carDoc, updatedData); // ⬅️ директно Promise
+  return updateDoc(carDoc, updatedData); 
 }
 
   
